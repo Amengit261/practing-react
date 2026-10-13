@@ -1,38 +1,22 @@
 import './App.css';
-function Header () {
-  return  <h2>I am Amen Girma.</h2>;
+function  Students ({ name,passed,}){
+return(
+
+  <div>
+    <h2>Name:{name}</h2>
+    <p>result:{passed?"passed":"Failed"}</p>
+
+      {!passed&& <p>Congratulations!</p>}
+</div>
+);
 }
-function About() {
-  return<p>I am a Computer Science student.</p>;
-}
-function Skills() {
-  return (
-    <div>
-      <h3>My skills</h3>
-  <p>HTML, CSS, JavaScript, and React</p>
-  </div>
-  );
-}
-function Projects() {
+function App(){
   return(
     <div>
-      <h3> Projects</h3>
-      <p>burger club</p>
-      <p>Hospital Apointemnt and Patient Mangemnt System </p>
-      <p>Ethiopian Movie Website</p>
-
-    </div>
-  );
-}
- 
-function App(){
-  return (
-  <div>
-    <Header/>
-    <About/>
-    <Skills/>
-    <Projects/>
-  </div>
+    <Students name="Amen" passed={true}/>
+    <Students name="zele" passed={true}/>
+    <Students name="fkr" passed={false}/>
+</div>
   );
 }
 export default App;

@@ -1,22 +1,27 @@
 import './App.css';
-function  Students ({ name,passed,}){
-return(
-
-  <div>
-    <h2>Name:{name}</h2>
-    <p>result:{passed?"passed":"Failed"}</p>
-
-      {!passed&& <p>Congratulations!</p>}
-</div>
-);
-}
+import { useState } from 'react';
 function App(){
-  return(
-    <div>
-    <Students name="Amen" passed={true}/>
-    <Students name="zele" passed={true}/>
-    <Students name="fkr" passed={false}/>
-</div>
-  );
+  const[count, setCount]=useState("Amen");
+ 
+function handleReset() {
+  setCount(0);
 }
+function handleClick() {
+  setCount(previousCount => previousCount + 1);
+}
+function handleIncreaseByTwo() {
+  setCount(previousCount => previousCount +2 );
+}
+
+return (
+  <div>
+   <h1>counter app</h1>  
+   <p>count:{count}</p>
+
+   <button onClick={handleClick}>Increase</button>
+   <button onClick={handleReset}>Reset</button>
+   <button onClick={handleIncreaseByTwo}>Increaseby 2</button>
+
+  </div>
+);}
 export default App;

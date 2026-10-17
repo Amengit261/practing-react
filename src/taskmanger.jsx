@@ -36,8 +36,9 @@ function TaskManager() {
 
   return (
 
-    <div className='Task'>
+    <div className='Task-continer'>
       <h1 id='head'>My Tasks Manager</h1>
+    <div className='Tasks-continer'>
 
       <input className='type'
         type="text"
@@ -51,7 +52,7 @@ function TaskManager() {
       </button>
 
       {tasks.map((task, index) => (
-        <p key={`${task}-${index}`}>
+        <p key={`${task}-${index}`} className='p1'>
           {task}
 
           <button onClick={() => deleteTask(task)} className='btndelet'>
@@ -73,6 +74,8 @@ function TaskManager() {
         </p>
       ))}
     </div>
+    </div>
+
   );
 }
 

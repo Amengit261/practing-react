@@ -55,7 +55,7 @@ function TaskManager() {
         <p key={`${task}-${index}`} className='p1'>
           {task}
 
-          <button onClick={() => deleteTask(task)} className='btndelet'>
+          <button onClick={() => deleteTask(task)} className='btndel'>
             Delete
           </button>
 

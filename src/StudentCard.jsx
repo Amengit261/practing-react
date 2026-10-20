@@ -1,20 +1,19 @@
-function StudentCard(props){
-    return(
-       <>
-       <h2>{props.name}</h2>
-       <h3>{props.department}</h3>
-       <h2>{props.university}</h2>
-       {/* Display each skill from the array */}
-     { props.skills.map((skills) => {
-        return <p key={skills}>{skills}</p>
+function StudentCard({student}){
 
-    
-       } )}
+   return(
+      <>
+<h3>{student.name}</h3>
+<h3>{student.department}</h3>
+<h3>{student.university}</h3>
+{student.skills.map((skills) => {
+   return <h4 key={skills}>{skills}</h4>
+   })}
+   {student.map((onestudent) => {
+      return<h3 key={onestudent}>{onestudent} </h3>
+})}
 
-
-
-       </> 
-    
-);
+</>
+   );
 }
+
 export default StudentCard;

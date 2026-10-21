@@ -6,32 +6,40 @@ function StudentRegestration(){
     useState("");
     const[department, setDepartment]=
     useState("");
+    const [error, setError] = useState("");
     function handleSubmit(event){
  event.preventDefault();
  if(name===""){
-alert("Please enter your name!");
-}
- if(email===""){
-alert("Please enter your email!");
+setError("Please enter your name!");
+} else if(email===""){
+setError("Please enter your email!");
 
- }
-  if(department===""){
-alert("Please enter your department");
+ } else if(department===""){
+setError("Please enter your departemnt!");
 
- }
+ } else 
+    setError("");
+    setName("");
+    setEmail("");
+    setDepartment("");
+    
+ 
     
     }
 
    
 
     return (
+        <>
+        <h1>Student Registration Form</h1>
         <form onSubmit={handleSubmit}>
+            <label for ="Full Name">
        <input
        value = {name} 
        onChange ={(event) =>
         setName(event.target.value) }
     placeholder="Enter your name"
-     /> 
+     /> </label>
       <input
        value = {email} 
        onChange ={(event) =>
@@ -44,8 +52,10 @@ alert("Please enter your department");
         setDepartment(event.target.value)}
         placeholder="Enter your Departemnt"
         /> 
+        <p>{error}</p>
         <button  type="submit">Register</button>
         </form>
+        </>
     );
 }
 export default StudentRegestration;

@@ -8,6 +8,18 @@ function StudentRegestration(){
     useState("");
     function handleSubmit(event){
  event.preventDefault();
+ if(name===""){
+alert("Please enter your name!");
+}
+ if(email===""){
+alert("Please enter your email!");
+
+ }
+  if(department===""){
+alert("Please enter your department");
+
+ }
+    
     }
 
    

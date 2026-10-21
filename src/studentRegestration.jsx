@@ -6,8 +6,14 @@ function StudentRegestration(){
     useState("");
     const[department, setDepartment]=
     useState("");
-    return(
-        <>
+    function handleSubmit(event){
+ event.preventDefault();
+    }
+
+   
+
+    return (
+        <form onSubmit={handleSubmit}>
        <input
        value = {name} 
        onChange ={(event) =>
@@ -20,14 +26,14 @@ function StudentRegestration(){
         setEmail(event.target.value) }
     placeholder="Enter your email"
      /> 
-     < input
+     <input
      value={department}
      onChange={(event)=>
         setDepartment(event.target.value)}
         placeholder="Enter your Departemnt"
-        />
+        /> 
         <button  type="submit">Register</button>
-        </>
+        </form>
     );
 }
 export default StudentRegestration;
